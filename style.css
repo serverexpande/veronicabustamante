@@ -1,0 +1,417 @@
+css
+/* --- 1. CONFIGURACIÓN BASE --- */
+:root {
+    --dorado: #c5a059;      /* Color principal de Rossana Tabares */
+    --dorado-dark: #b08e4a;
+    --oscuro: #1a1a1a;      /* Para textos importantes y pie de página */
+    --texto: #4a4a4a;       /* Gris suave para lectura */
+    --claro: #fcfaf7;       /* Fondo crema muy ligero */
+    --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna y limpia */
+    color: var(--texto);
+    line-height: 1.6;
+    background-color: var(--blanco);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Fuente elegante para títulos */
+    color: var(--oscuro);
+    font-weight: 700;
+}
+
+/* --- 2. NAVEGACIÓN (Sticky) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8%; /* Reducimos el padding vertical para dar más espacio al logo */
+    height: 80px;     /* Fijamos una altura al nav para que sea consistente */
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%; /* El contenedor del logo ocupa todo el alto del nav */
+}
+
+.logo-img {
+    height: 70px;      /* Aumentamos el tamaño (casi al límite de los 80px del nav) */
+    width: auto;       /* Mantiene la proporción */
+    object-fit: contain; 
+    display: block;
+}
+
+nav a {
+    /* Mantenemos tus estilos de botones, ellos se alinearán al centro automáticamente */
+    margin-left: 25px;
+    text-decoration: none;
+    color: white; 
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+/* Estilo del header cuando el usuario hace scroll */
+header.header-active {
+    background: rgba(255, 255, 255, 0.7); /* Blanco con transparencia */
+    backdrop-filter: blur(15px);         /* Este es el efecto esmerilado */
+    -webkit-backdrop-filter: blur(15px); /* Soporte para Safari */
+    padding: 15px 8%;                    /* Se hace un poco más delgado al bajar */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Cambia el color del texto a oscuro cuando el fondo se activa */
+header.header-active .logo,
+header.header-active nav a {
+    color: #1a1a1a;
+}
+
+/* Transición suave para que no cambie de golpe */
+header {
+    transition: all 0.4s ease-in-out;
+}
+
+/* IMPORTANTE: Cambia el color de los textos para que se vean sobre la imagen oscura */
+.logo-img {
+    height: 50px;       /* Ajusta la altura a tu gusto */
+    width: auto;        /* Mantiene la proporción de la imagen */
+    display: block;     /* Evita espacios extra debajo de la imagen */
+    transition: transform 0.3s ease;
+}
+
+/* Opcional: un pequeño efecto al pasar el mouse */
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Ajuste para que el header alinee bien el logo con los botones */
+header {
+    display: flex;
+    align-items: center; /* Centra verticalmente logo y botones */
+    justify-content: space-between;
+    padding: 15px 8%;
+}
+
+nav a {
+    color: var(--blanco); /* Color blanco para resaltar sobre el fondo */
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--dorado);
+}
+
+.logo {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--oscuro);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--oscuro);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--dorado);
+}
+
+/* --- 3. HERO SECTION (Imagen o Video) --- */
+.hero {
+    height: 100vh; /* Que ocupe toda la pantalla para un efecto premium */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    /* Asegúrate de tener el linear-gradient oscuro para que el texto blanco se lea bien */
+    
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--blanco);
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--dorado);
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.4s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--dorado-dark);
+    transform: translateY(-3px);
+}
+
+/* --- 4. SECCIONES GENERALES --- */
+section {
+    padding: 100px 8%;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 20px 20px 0px var(--claro); /* Efecto decorativo detrás de la foto */
+}
+
+/* Estilos del Botón Flotante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;       /* Distancia del borde inferior */
+    right: 20px;        /* Distancia del borde derecho */
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 9999;      /* Asegura que siempre esté encima de todo */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite; /* Animación suave */
+}
+
+.whatsapp-icon {
+    width: 25px;
+    height: 25px;
+}
+
+/* Efecto al pasar el mouse */
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Animación de rebote sutil */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* En celulares muy pequeños, ocultamos el texto para que no ocupe mucho espacio */
+@media (max-width: 480px) {
+    .whatsapp-float span {
+        display: none;
+    }
+    .whatsapp-float {
+        padding: 12px;
+        border-radius: 50%;
+    }
+}
+
+/* --- 5. GRID DE SERVICIOS --- */
+.services {
+    background-color: var(--claro);
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: var(--blanco);
+    padding: 0 0 30px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    margin: 20px 0 10px;
+    font-size: 1.5rem;
+}
+
+.service-card p {
+    padding: 0 20px;
+    font-size: 0.95rem;
+}
+
+/* --- 6. ESTADÍSTICAS --- */
+.stats {
+    background: var(--oscuro);
+    color: var(--blanco);
+    padding: 60px 8%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat-item h2 {
+    color: var(--dorado);
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.contact-info {
+    /* Añadimos una imagen de fondo (puedes cambiarla por una de flores, mármol o spa) */
+    background-image: url('https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    
+    /* ESTO ACTIVA EL PARALLAX */
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 100px 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Capa para suavizar la imagen y que el texto se lea bien */
+.contact-info::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(244, 241, 234, 0.85); /* Tono champagne traslúcido */
+    z-index: 0;
+}
+
+.contact-container {
+    position: relative;
+    z-index: 1; /* Para que el texto quede por encima de la capa de color */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Pequeña línea decorativa bajo el título */
+.contact-column h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--dorado);
+    margin-top: 10px;
+}
+
+.contact-column p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.contact-column a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.contact-column a:hover {
+    color: var(--dorado);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column; /* Lista vertical, puedes cambiarlo a 'row' si prefieres */
+    gap: 10px;
+}
+
+.social-icon {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive: en celulares las columnas se apilan automáticamente */
+@media (max-width: 768px) {
+    .contact-info {
+        text-align: center;
+    }
+    .contact-column h3::after {
+        margin: 10px auto;
+    }
+}
+
+/* --- 7. FOOTER --- */
+footer {
+    background: var(--blanco);
+    padding: 50px 8%;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+/* --- 8. RESPONSIVE --- */
+@media (max-width: 992px) {
+    .about { grid-template-columns: 1fr; text-align: center; }
+    header { flex-direction: column; gap: 15px; }
+}
+
+@media (max-width: 600px) {
+    .stats { gap: 30px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; }
+    nav a { margin: 5px 10px; }
+}

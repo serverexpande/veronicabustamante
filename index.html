@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veronica Bustamante Esthetic Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        :root {
+            --dorado: #c5a059;
+            --oscuro: #1a1a1a;
+            --claro: #transparent;
+            --texto: #333;
+        }
+
+        body { font-family: 'Poppins', sans-serif; margin: 0; color: var(--texto); line-height: 1.6; }
+
+        /* HEADER & NAV */
+        header { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--oscuro); font-weight: 600; font-size: 0.9rem; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--dorado); font-weight: bold; }
+
+        /* HERO SECTION - CAMBIA EL VIDEO O IMAGEN AQUÍ */
+        .hero {
+    height: 80vh;
+    background: url('img/verologofondozip.png'); /* Se eliminó el linear-gradient */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+        }
+        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; }
+        .btn { background: var(--dorado); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; transition: 0.3s; }
+        .btn:hover { background: #b08e4a; }
+
+        /* SECCIÓN SOBRE NOSOTROS */
+        .about { padding: 80px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about img { width: 100%; border-radius: 10px; } /* REEMPLAZAR IMAGEN EN HTML */
+
+        /* SERVICIOS - GRID */
+        .services { background: var(--claro); padding: 80px 10%; text-align: center; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .service-card { background: white; padding: 30px; border-radius: 10px; transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+
+        /* ESTADÍSTICAS */
+        .stats { background: var(--oscuro); color: white; padding: 60px 10%; display: flex; justify-content: space-around; text-align: center; }
+        .stats h2 { font-size: 2.5rem; color: var(--dorado); margin: 0; }
+
+        footer { background: white; padding: 40px 10%; border-top: 1px solid #eee; text-align: center; }
+
+        @media (max-width: 768px) {
+            .about { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <div class="logo">
+        <img src="img/dinfondologoorig.png" alt="Logo Vero Spa" class="logo-img">
+    </div>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            
+            
+        </div>
+        </section>
+
+    <section class="about">
+        <div>
+            <img src="img/fondo600.jpg">
+        </div>
+        <div>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Esthetic Center</h2>
+            <p>Somos el mejor centro especializado en estética avanzada y bienestar integral ubicado en Panamá. Se distingue por ofrecer una experiencia que combina aparatología de última generación con técnicas manuales relajantes, enfocándose tanto en resultados visibles como en el alivio del estrés.</p>
+           
+        </div>
+    </section>
+
+    <section class="stats">
+        <div><p>"Verónica Bustamante Esthetic Center es el lugar ideal para quienes buscan resultados reales en un ambiente de total relajación. Sus tratamientos faciales y corporales cuentan con tecnología de vanguardia, pero lo que realmente marca la diferencia es el trato personalizado y experto de su equipo. Es una parada obligatoria en Panamá para renovar la piel y liberar el estrés del día a día. Totalmente recomendado por su profesionalismo y sus excelentes promociones."</p></div>
+
+    </section>
+
+    <section class="services">
+        <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Menú de Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="img/faciales.jpg" alt="Faciales">
+                <h3>Tratamientos Faciales</h3>
+                <p>Limpieza profunda, hidratación y peeling avanzado.</p>
+            </div>
+            <div class="service-card">
+                <img src="img/moldeo1.jpg" alt="Corporales">
+                <h3>Moldeo Corporal</h3>
+                <p>Tratamientos reductores y reafirmantes.</p>
+            </div>
+            <div class="service-card">
+                <img src="img/masajesjh.jpg" alt="Spa">
+                <h3>Spa y Bienestar</h3>
+                <p>Masajes terapéuticos y rituales de relajación.</p>
+            </div>
+            <div class="service-card">
+                <img src="img/spa (1).jpg" alt="Faciales">
+                <h3>Relajación Garantizada</h3>
+                <p>Masajes relajantes, Descontracturantes y exfoliaciones.</p>
+            </div>
+            <div class="service-card">
+                <img src="img/spa (2).jpg" alt="Corporales">
+                <h3>Piedras Volcanicas</h3>
+                <p>Maderoterapia, cupping y vacumterapia.</p>
+            </div>
+            <div class="service-card">
+                <img src="img/spa (3).jpg" alt="Spa">
+                <h3>Spa y Bienestar</h3>
+                <p>Masajes terapéuticos y rituales de relajación.</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact-info">
+    <div class="contact-container">
+        <div class="contact-column">
+            <h3>Horario de Atención</h3>
+            <p><strong>Lunes - Viernes:</strong> 7 AM - 7 PM</p>
+            <p><strong>Sábados:</strong> 8 AM - 4 PM</p>
+            <p><strong>Domingos:</strong> Cerrado</p>
+        </div>
+
+        <div class="contact-column">
+            <h3>Contacto</h3>
+            <p>📍 Edif. Obarrio 60 Piso 16D Panama</p>
+            <p>📞 <a href="tel:2096960">+507 6057-9572</a></p>
+            <p>📧 <a href="mailto:info@verospa.com">v.bustamantecontacto@gmail.com</a></p>
+        </div>
+
+        <div class="contact-column">
+    <h3>Síguenos</h3>
+    <div class="social-links">
+        <a href="https://wa.me/50712345678?text=Hola!%20Deseo%20más%20información" 
+           target="_blank" 
+           class="social-icon">
+           WHATSAPP
+        </a>
+
+        <a href="https://facebook.com/veronicabustamanteestetica" 
+           target="_blank" 
+           class="social-icon">
+           FACEBOOK
+        </a>
+
+        <a href="https://instagram.com/veronicabustamant" 
+           target="_blank" 
+           class="social-icon">
+           INSTAGRAM
+        </a>
+    </div>
+</div>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy; 2026 Inversoftve | Todos los derechos reservados.</p>
+    </footer>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        // Si el usuario baja más de 50px, añade la clase active
+        if (window.scrollY > 50) {
+            header.classList.add('header-active');
+        } else {
+            header.classList.remove('header-active');
+        }
+    });
+</script>
+<a href="https://wa.me/+50760579572?text=Hola,%20vengo%20de%20la%20web%20y%20deseo%20agendar%20una%20cita" 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    <span>¿Deseas agendar?</span>
+</a>
+</body>
+</html>
